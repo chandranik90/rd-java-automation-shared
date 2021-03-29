@@ -1,3 +1,5 @@
+package qahana;
+
 public class Qahana {
 
     public int aghotel(int amount, String currency) throws Exception {
