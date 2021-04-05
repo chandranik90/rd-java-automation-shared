@@ -1,13 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="mySuite" verbose="1" >
+<suite name="mySuite" verbose="1" data-provider-thread-count="2">
     <test name="myTest">
+<!--        <parameter name="valodParameter" value="valod TestNG Value"/>-->
+<!--        <parameter name="vramParameter" value="vram TestNG Value"/>-->
+
         <classes>
-            <class name="anotherpackage.Qahana2Test">
-                <methods>
-                    <include name="bigAmountTest"/>
-                </methods>
-            </class>
+            <class name="factory.MyFactory"/>
+<!--            <class name="anotherpackage.Qahana2Test">-->
+<!--                <methods>-->
+<!--                    <include name="parameterizedTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 </suite>
