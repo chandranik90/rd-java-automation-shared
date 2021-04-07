@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -33,7 +34,6 @@ public class ProductsDisplayTest {
         productsPage.waitForPageLoad();
         Assert.assertEquals(productsPage.getAllProductsCount(),69,
                 "Products actual count differs from expected one");
-
 //        Thread.sleep(10000);
     }
 

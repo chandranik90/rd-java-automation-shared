@@ -5,26 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ProductsPage {
+public class ProductsPage extends BasePage {
 
-    private WebDriver driver;
     private String filterXpathtemplate = "//span[text()='%s']";
     private By priceFacetLoc = By.cssSelector("ul[aria-labelledby=priceFacet]");
     private By prodsLoc = By.cssSelector("#searchPage article");
-    private WebDriverWait wait;
 
     public void clickOnFilterElem(String filterText) {
         driver.findElement(By.xpath(String.format(filterXpathtemplate,filterText))).click();
     }
 
-//    public void login(String user, String pass) {
-//        loginElem.sendKeys(user);
-//        passElem.sendKeys(pass);
-//        loginElem.click();
-//    }
-
     public ProductsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
+    }
+
+    @Override
+    public String getUrl() {
+        return "/";
     }
 
     public void waitForPageLoad() {

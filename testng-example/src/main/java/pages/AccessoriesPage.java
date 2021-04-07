@@ -6,9 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AccessoriesPage {
+public class AccessoriesPage extends BasePage {
 
-    private WebDriver driver;
     private String prodNameLocTemplate = "//p[text()='%s']";
     private By articlesLoc = By.tagName("article");
     private By navBarLinksLoc = By.cssSelector("div[data-sub-nav]>ul>li>a");
@@ -16,7 +15,12 @@ public class AccessoriesPage {
     private String url = "c/accessories";
 
     public AccessoriesPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
+    }
+
+    @Override
+    public String getUrl() {
+        return url;
     }
 
     public void clickOnProductByText(String prodName) {
